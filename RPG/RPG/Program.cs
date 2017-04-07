@@ -42,8 +42,7 @@ namespace RPG
             do//make sure this condition is run at LEAST once(i.e render our map once), then we exist while our read key is NOT ENTER
             {
                 Console.Clear();
-                Console.SetCursorPosition(0, 0);
-
+                Console.SetCursorPosition(0,0);
                 PrintMap(rooms, player);
                 player.Render();
                 //RenderMonsters();
@@ -54,9 +53,24 @@ namespace RPG
 
                 if (Console.ReadKey().Key == ConsoleKey.D)
                 {
-                    player.Move(Movement.NORTH);//we want to move our player EAST
+                    player.Move(Movement.EAST);
+
                 }
-                 
+                else if (Console.ReadKey().Key == ConsoleKey.S)
+                {
+                    player.Move(Movement.SOUTH);
+
+                }           
+                else if (Console.ReadKey().Key == ConsoleKey.A)
+                {
+                    player.Move(Movement.WEST);
+
+                }
+                else if (Console.ReadKey().Key == ConsoleKey.W)
+                {
+                    player.Move(Movement.NORTH);
+
+                }
 
             }
             while (true);
