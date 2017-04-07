@@ -18,31 +18,43 @@ namespace RPG
         }
 
         public int HP { get; set; }
-        public int X { get; set; }
-        public int Y { get; set; }
+        protected int X { get; set; }
+        protected int Y { get; set; }
         public String Symbol { get; set; }
 
 
         public void Render()
         {
             Console.SetCursorPosition(X,Y);
-            Console.Write("\t" + Symbol);
+            Console.Write(Symbol);
         }
 
         public void Move(Movement movement)
         {
             Console.WriteLine("");
 
-            if (movement == Movement.NORTH)
+            if (movement == Movement.EAST)
             {
-                //move north
-                Console.WriteLine("Moved North");
-
+                X++;
+             }
+            else if (movement == Movement.NORTH)
+            {
+                Y--;
             }
+            else if (movement == Movement.SOUTH)
+            {
+                Y++;
+            }
+            else if (movement == Movement.WEST)
+            {
+                X--;
+            }
+      
 
-        }
 
-         
+
+
+         }
+
     }
-
 }
