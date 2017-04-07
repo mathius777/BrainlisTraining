@@ -16,7 +16,7 @@ namespace RPG
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {                
-                   Console.Write(matrix[i, j].Symbol + "\t");                  
+                   Console.Write(matrix[i, j].Symbol);                  
                  
                 }
                 Console.WriteLine();
@@ -41,6 +41,8 @@ namespace RPG
              
             do//make sure this condition is run at LEAST once(i.e render our map once), then we exist while our read key is NOT ENTER
             {
+                Console.Clear();
+                Console.SetCursorPosition(0, 0);
 
                 PrintMap(rooms, player);
                 player.Render();
@@ -54,11 +56,10 @@ namespace RPG
                 {
                     player.Move(Movement.NORTH);//we want to move our player EAST
                 }
-
-
+                 
 
             }
-            while (Console.ReadKey().Key != ConsoleKey.Enter);
+            while (true);
           
              
             Console.ReadLine();

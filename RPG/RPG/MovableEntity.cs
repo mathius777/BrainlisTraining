@@ -26,7 +26,7 @@ namespace RPG
         public void Render()
         {
             Console.SetCursorPosition(X,Y);
-            Console.Write("\t" + Symbol);
+            Console.Write(Symbol);
         }
 
         public void Move(Movement movement)
@@ -37,7 +37,7 @@ namespace RPG
             {
                 //move north
                 Console.WriteLine("Moved North");
-
+                X++;
             }
 
         }
